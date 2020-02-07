@@ -1,19 +1,53 @@
 import argparse
 import sys
 import os
+import re
 import csv
 from pull import PULL
 from parser import PARSER
+
+pull = PULL()
 
 class LOCOHUNT:
 
 	def __init__(self, prs):
 		self.tgtlist = prs.list
 		self.regexs  = prs.regexs
-		self.depth   = prs.depth
 
 	def engage(self):
-		return
+		pull.run(
+			"Starting Locohunt RGX [{regexs}] FLS [{files}]".format(
+				regexs=pull.DARKCYAN+str(len(self.regexs))+pull.END,
+				files=pull.DARKCYAN+str(len(self.tgtlist))+pull.END,	
+			)
+		)
+		pull.linebreak()
+
+		for tgt in self.tgtlist:
+			ds_list = []
+
+			try:
+				fl  = open(tgt)
+				lns = fl.read().splitlines()
+			except UnicodeDecodeError:
+				continue
+
+			for ln in lns:
+				for (regname, regvalue) in self.regexs.items():
+					if re.search(regvalue, ln, re.I):
+						ds_list.append( (regname, ln, lns.index(ln)+1) )
+
+			if ds_list:
+				pull.info(
+					"Path: {filepath}".format(
+						filepath=pull.YELLOW+tgt+pull.END
+					)
+				)
+
+				for ds in ds_list:
+					pull.liner(ds[2], ds[0], ds[1])
+
+				pull.linebreak()
 
 def main():
 	parser = argparse.ArgumentParser()
@@ -26,10 +60,8 @@ def main():
 	opts = parser.parse_args()
 	parser = PARSER(opts)
 
-	print(parser.list)
-
-	#locohunt = LOCOHUNT(parser)
-	#locohunt.engage()
+	locohunt = LOCOHUNT(parser)
+	locohunt.engage()
 
 if __name__ == "__main__":
 	main()

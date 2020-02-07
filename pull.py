@@ -109,6 +109,17 @@ class PULL:
 			)
 		)
 
+	def liner(self, ln, keyid, liner):
+		print(
+			"{colora}Ln {ln}{colorb}: [{keyid}] : {liner}".format(
+				colora=self.GREEN,
+				colorb=self.END,
+				ln=ln,
+				keyid=self.RED+keyid+self.END,
+				liner=liner
+			)
+		)
+
 	def halt(self, string, exit=0):
 		print(
 			"{colora}[~]{colorb} {string}".format(
@@ -120,3 +131,6 @@ class PULL:
 
 		if exit:
 			sys.exit(exit)
+
+	def linebreak(self, brr=1):
+		sys.stdout.write("\n" * brr)

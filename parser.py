@@ -9,6 +9,7 @@ pull = PULL()
 class PARSER:
 
 	REGEXS = {
+		"Firebase URL": "*firebaseio\.com",
 		"Slack Token": "(xox[p|b|o|a]-[0-9]{12}-[0-9]{12}-[0-9]{12}-[a-z0-9]{32})",
     	"RSA private key": "-----BEGIN RSA PRIVATE KEY-----",
     	"SSH (DSA) private key": "-----BEGIN DSA PRIVATE KEY-----",
@@ -80,7 +81,7 @@ class PARSER:
 			elif os.path.isdir(tgt):
 				rtval = self.enum_files(tgt)
 			else:
-				pull.halt("Target Directory/File Does not Exists!", 1)
+				pull.halt("Target Directory/File Does not Exist!", 1)
 		else:
 			pull.halt("Target Directory/File Not Provided!", 1)
 
