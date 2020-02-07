@@ -1,5 +1,5 @@
 <h1 align="center"> 
-    <img src="https://user-images.githubusercontent.com/29171692/74031469-6767bb80-49d3-11ea-9a88-9e51ee7bc8fb.png" alt="locohunt" /> <br>    
+    <img src="https://user-images.githubusercontent.com/29171692/74031823-57041080-49d4-11ea-9900-37e1bfd21ee8.png" alt="locohunt" /> <br>    
     LOCOHUNT
 </h1>
 <h4 align="center">Search for Secrets and Other Confidential Information Through Directories and Files Based on Regex and Search Strings. </h4>
