@@ -25,5 +25,8 @@ This tool is inspired from <a href="https://github.com/dxa4481/truffleHog">truff
     -d, --depth       Depth of Directories          All
 ```
 
+## Regex
+To Use Your own Regex file, you need to give in JSON form. An example is given <a href="https://github.com/dxa4481/truffleHogRegexes/blob/master/truffleHogRegexes/regexes.json">here</a>
+
 ## Credits
 Author: <a href="https://twitter.com/hash3liZer">@hash3liZer</a>
