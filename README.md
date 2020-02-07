@@ -7,6 +7,8 @@
     <a href="https://www.gnu.org/licenses/gpl-3.0" target="_blank"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="lisence" /></a>
 </p>
 
+<a href="https://asciinema.org/a/299006" target="_blank"><img src="https://asciinema.org/a/299006.svg" /></a>
+
 ## Description
 This tool is inspired from <a href="https://github.com/dxa4481/truffleHog">truffleHog</a> which was built to explore and search for api keys and other confidential information through a github repo commit repository. This tool is built to do the same but on directories by using the Regular Expressions. 
 
