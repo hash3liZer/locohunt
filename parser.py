@@ -51,9 +51,16 @@ class PARSER:
 	}
 
 	def __init__(self, opts):
+		if opts.help:
+			pull.help()
+
 		self.depth     = opts.depth if opts.depth >= 0 else pull.halt("Invalid Depth Provided!", exit=1)
 		self.list      = self.target(opts.target)
 		self.regexs    = self.regexs(opts.regex, opts.regfile)
+		#self.signal    = signal.signal(signal.SIGINT, self.handler)
+
+	def handler(self, sig, fr):
+		pull.halt("Received Interrupt!", exit=0)
 
 	def enum_files(self, tgt, depth=1):
 		rtval = []

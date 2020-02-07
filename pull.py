@@ -1,6 +1,35 @@
 import sys
 import os
 
+__logo__ = """
+**(       ***      ###   ### ##       ## ##      # ########
+**(     ***@***    ###   ### ##       ## # #     # ########
+**(    ***@@@@***  ###   ### ##       ## #  #    #    ##
+**(   ***@@@@@@*** ######### ##       ## #   #   #    ##
+**(    ***@@@@***  ###   ### ##       ## #    #  #    ##
+**(      ***@***   ###   ### ###     ### #     # #    ##
+**)**)**)  ***     ###   ### ## #######  #      ##    ##
+              Developed by @hash3liZer
+"""
+
+__help__ = """
+Description:
+	Search for Secrets and Other Confidential Information Through Directories and Files Based on Regex and Search Strings.
+
+Options:
+    Args              Description                  Default
+    -h, --help        Print Manual                  False
+    -t, --target      Target File or Directory
+                      for Searching and 
+                      Scanning                      None
+    -r, --regex       Single Regex to Search
+                      against the files.            None
+    -f, --regex-json  File Containing multiple
+                      Regular Expressions in JSON
+                      Format.                       Inner
+    -d, --depth       Depth of Directories          All
+"""
+
 class PULL:
 
 	WHITE = '\033[0m'
@@ -122,7 +151,7 @@ class PULL:
 
 	def halt(self, string, exit=0):
 		print(
-			"{colora}[~]{colorb} {string}".format(
+			"\r{colora}[~]{colorb} {string}".format(
 				colora=self.RED,
 				colorb=self.END,
 				string=string
@@ -134,3 +163,10 @@ class PULL:
 
 	def linebreak(self, brr=1):
 		sys.stdout.write("\n" * brr)
+
+	def help(self):
+		print(__help__)
+		sys.exit(0)
+
+	def logo(self):
+		print(self.YELLOW+__logo__+self.END)

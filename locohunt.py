@@ -1,5 +1,6 @@
 import argparse
 import sys
+import threading
 import os
 import re
 import csv
@@ -50,8 +51,9 @@ class LOCOHUNT:
 				pull.linebreak()
 
 def main():
-	parser = argparse.ArgumentParser()
+	parser = argparse.ArgumentParser(add_help=False)
 
+	parser.add_argument('-h', '--help', dest="help", default=False, action="store_true")
 	parser.add_argument('-t', '--target', dest="target", default="", type=str)
 	parser.add_argument('-r', '--regex', dest="regex", default="", type=str)
 	parser.add_argument('-f', '--regex-json', dest="regfile", default="", type=str)
@@ -64,4 +66,5 @@ def main():
 	locohunt.engage()
 
 if __name__ == "__main__":
+	pull.logo()
 	main()
