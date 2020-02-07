@@ -9,7 +9,7 @@ pull = PULL()
 class PARSER:
 
 	REGEXS = {
-		"Firebase URL": "*firebaseio\.com",
+		"Firebase URL": ".*firebaseio\.com",
 		"Slack Token": "(xox[p|b|o|a]-[0-9]{12}-[0-9]{12}-[0-9]{12}-[a-z0-9]{32})",
     	"RSA private key": "-----BEGIN RSA PRIVATE KEY-----",
     	"SSH (DSA) private key": "-----BEGIN DSA PRIVATE KEY-----",
