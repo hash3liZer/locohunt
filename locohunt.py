@@ -31,7 +31,11 @@ class LOCOHUNT:
 				fl  = open(tgt)
 				lns = fl.read().splitlines()
 			except UnicodeDecodeError:
-				continue
+				pull.halt(
+					"Error: Invalid! Path: {filepath}".format(
+						filepath=pull.RED+tgt+pull.END
+					)
+				)
 
 			for ln in lns:
 				for (regname, regvalue) in self.regexs.items():
