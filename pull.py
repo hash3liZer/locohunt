@@ -17,17 +17,19 @@ Description:
 	Search for Secrets and Other Confidential Information Through Directories and Files Based on Regex and Search Strings.
 
 Options:
-    Args              Description                  Default
-    -h, --help        Print Manual                  False
-    -t, --target      Target File or Directory
-                      for Searching and 
-                      Scanning                      None
-    -r, --regex       Single Regex to Search
-                      against the files.            None
-    -f, --regex-json  File Containing multiple
-                      Regular Expressions in JSON
-                      Format.                       Inner
-    -d, --depth       Depth of Directories          All
+    Args                  Description                  Default
+    -h, --help            Print Manual                  False
+    -t, --target          Target File or Directory
+                          for Searching and 
+                          Scanning                      None
+    -r, --regex           Single Regex to Search
+                          against the files.            None
+    -f, --regex-json      File Containing multiple
+                          Regular Expressions in JSON
+                          Format.                       Inner
+    -d, --depth           Depth of Directories          All
+        --suppress-errors Don't Display the Error
+                          Messages about files          False
 """
 
 class PULL:

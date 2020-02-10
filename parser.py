@@ -58,6 +58,7 @@ class PARSER:
 		self.depth     = opts.depth if opts.depth >= 0 else pull.halt("Invalid Depth Provided!", exit=1)
 		self.list      = self.target(opts.target)
 		self.regexs    = self.regexs(opts.regex, opts.regfile)
+		self.serrors   = opts.serrors
 		#self.signal    = signal.signal(signal.SIGINT, self.handler)
 
 	def handler(self, sig, fr):
