@@ -38,6 +38,7 @@ class LOCOHUNT:
 							filepath=pull.RED+tgt+pull.END
 						)
 					)
+				continue
 
 			for ln in lns:
 				for (regname, regvalue) in self.regexs.items():
