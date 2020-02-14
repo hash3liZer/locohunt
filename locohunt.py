@@ -14,7 +14,7 @@ class LOCOHUNT:
 	def __init__(self, prs):
 		self.tgtlist = prs.list
 		self.regexs  = prs.regexs
-		self.serrors = prs.serrors
+		self.verbose = prs.verbose
 
 	def engage(self):
 		pull.run(
@@ -32,7 +32,7 @@ class LOCOHUNT:
 				fl  = open(tgt)
 				lns = fl.read().splitlines()
 			except UnicodeDecodeError:
-				if not self.serrors:
+				if self.verbose:
 					pull.halt(
 						"Error: Invalid! Path: {filepath}".format(
 							filepath=pull.RED+tgt+pull.END
@@ -65,7 +65,7 @@ def main():
 	parser.add_argument('-r', '--regex', dest="regex", default="", type=str)
 	parser.add_argument('-f', '--regex-json', dest="regfile", default="", type=str)
 	parser.add_argument('-d', '--depth', dest="depth", default=0, type=int)
-	parser.add_argument('--suppress-errors', dest="serrors", default=False, action="store_true")
+	parser.add_argument('-v', '--verbose', dest="verbose", default=False, action="store_true")
 
 	opts = parser.parse_args()
 	parser = PARSER(opts)

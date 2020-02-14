@@ -28,8 +28,8 @@ Options:
                           Regular Expressions in JSON
                           Format.                       Inner
     -d, --depth           Depth of Directories          All
-        --suppress-errors Don't Display the Error
-                          Messages about files          False
+    -v,  --verbose         Print Errors on Opening
+                          files for searching           False
 """
 
 class PULL:
